@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block javascripts_head %}
+    {{ block.super }}
+    
+    <script>
+      window.EmberAppENV = {{ settings.ember_env }};
+      window.EmberENV = window.EmberAppENV.EmberENV;
+    </script>
+    <script src="assets/ember-app.js"></script>
+    
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+    <div class="large-12 columns">
+	
+        <div id="ember-app"></div>
+        
+        <script>
+            window.EmberApp = require('{{ settings.ember_app_name }}/app')['default'].create(EmberAppENV.APP);
+        </script>         
+        
+    </div>
+    
+{% endblock %}
+
+
+{% block right_column %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block javascripts_footer %}
+<script type="text/javascript">
+</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{{#each ppfa-test-run in ppfa-test.ppfa_test_runs}}
+<tr>
+    <td colspan="2">
+        Run On:
+    </td>
+    <td colspan="4">
+            {{ format-date ppfa-test-run.date_created "LLLL" }}
+    </td>
+    <td colspan="2">
+        Status: {{ boolean-success ppfa-test-run.status }} 
+    </td>
+</tr>                                     
+{{/each}}

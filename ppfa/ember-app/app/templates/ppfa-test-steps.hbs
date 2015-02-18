@@ -1,0 +1,50 @@
+<table>
+<thead>
+ <tr><td>
+        Subject
+  </td><td>
+        Verb
+  </td><td>
+        Object
+  </td><td>
+        Test
+  </td>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test-step in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{ppfa-test-step.subject}}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-step.verb}}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-step.object}}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-step.ppfa_test}}
+  </td>
+  
+  
+  <td>
+  {{#link-to "ppfa-test-step" ppfa-test-step}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-test-steps' page=page num_pages=num_pages}}

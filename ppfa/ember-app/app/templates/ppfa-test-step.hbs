@@ -1,0 +1,7 @@
+{{#form-for model}}
+  {{input subject placeholder="Enter your subject"}}
+  {{input verb placeholder="Enter your verb"}}
+  {{input object placeholder="Enter your object"}}
+  <button {{action "submit" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  <button {{action "delete" model}} class="small"><i class="fa fa-trash-o"></i> Delete</button>
+{{/form-for}}

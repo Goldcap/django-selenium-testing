@@ -1,0 +1,119 @@
+.row {
+    max-width: 100% !important;
+}
+
+.main-section .primary {
+	margin-bottom: 60px;
+}
+
+.icon-bar a {
+	margin-right: 10px;
+}
+
+.test {
+    background: none !important;
+    padding: 0 !important;
+}
+
+.test .name a {
+    color: black !important;
+}
+
+.test-run {
+    margin-bottom: 23px !important;
+}
+
+#tests, #test-runs, #test-run-assertions {
+    max-height: 900px;
+    overflow: auto;
+	overflow-x: none;
+}
+
+.test ul li {
+    height: 32px; 
+    line-height: 20px;
+    font-size: 12px !important;
+    padding: 5px 5px 5px 15px !important;
+}
+
+.test ul li:first-child {
+    background-color: #aaa;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color: white !important;
+    padding-left: 5px !important; 
+}
+
+.test ul.bare li {
+    padding: 0px 5px 0px 0px !important;
+    height: auto !important;
+    background-color: transparent !important;
+}
+
+.test ul.bare li.delete a {
+    color: #ff0000;
+}
+
+.console {
+    background-color: #aaa;
+    color: white;
+    padding: 10px;
+	position: absolute;
+	top: 95px;
+	right: 15px;
+	z-index: 100;
+	width: 400px;
+	opacity: 0.7;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+	font-size: 11px;
+}
+                  
+.console #holder {
+    display: none;
+    height: 310px;
+}
+
+.console #holder.opened {
+    display: block;
+}
+
+.console .messages {
+    overflow: auto; 
+    overflow-x: none;
+}
+
+.console .topper {
+    background: #aaa;
+}
+
+.console a {
+    color: black;
+    
+}
+
+.console .icon-bar {
+    padding: 5px;
+}
+
+.console ul {
+    list-style: none;
+    padding-left: 2.0em;
+    text-indent: -2.0em;
+}  
+
+.console li {
+	font-size: 11px;
+}
+
+.console li:before {
+    content: '\24\A0';
+}
+
+
+a.success {
+    color: green;
+}   
+
+a.alert {
+    color: red;
+}                                

@@ -1,0 +1,68 @@
+<div class="off-canvas-wrap fixed" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">Planned Parenthood Test Runner</h1>
+      </section>
+
+    </nav>
+
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li>{{#link-to "index" current-when="index"}}Home{{/link-to}}</li>
+        <li>{{#link-to "ppfa_tests" current-when="ppfa_tests"}}Tests{{/link-to}}</li>
+        <li>{{#link-to "ppfa_test_runs" current-when="ppfa_test_runs"}}Test Runs{{/link-to}}</li> 
+        <li>{{#link-to "ppfa_test_assertions" current-when="ppfa_test_assertions"}}Test Assertions{{/link-to}}</li>
+      </ul>
+    </aside>
+
+    <section class="main-section">
+      
+      <nav class="primary top-bar fixed" data-topbar>
+          <ul class="title-area">
+             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+        
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li class="not-has-dropdown">
+                <a href="/logout/">Logout</a>
+              </li>
+            </ul>
+        
+            <!-- Left Nav Section -->
+            <ul class="left">
+              <li class="has-form">
+                  <div class="row collapse">
+                    <div class="large-8 small-9 columns">
+                      <input type="text" placeholder="Find Test">
+                    </div>
+                    <div class="large-4 small-3 columns">
+                      <a href="#" class="alert button expand">Search</a>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+          </section>
+        </nav>
+        
+        <article class="content">
+        {{outlet}}
+        </article>
+      
+    </section>
+
+  <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+
+<div id="div2" class="console" draggable="true">
+{{ ember-ws4redis parent=this }}
+</div>

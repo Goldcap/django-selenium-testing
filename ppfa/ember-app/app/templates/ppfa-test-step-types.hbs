@@ -1,0 +1,29 @@
+<table>
+<thead>
+ <tr><td>
+        Name
+  </td>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test-step-type in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{ppfa-test-step-type.name}}
+  </td>
+  
+  
+  <td>
+  {{#link-to "ppfa-test-step-type" ppfa-test-step-type}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-test-step-types' page=page num_pages=num_pages}}

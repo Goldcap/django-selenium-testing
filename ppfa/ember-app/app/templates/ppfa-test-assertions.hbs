@@ -1,0 +1,64 @@
+<table class="main">
+<thead>
+ <tr><td>
+        Subject
+  </td><td>
+        Verb
+  </td><td>
+        Object
+  </td><td>
+        Status
+  </td><td>
+        Run
+  </td><td>
+        Test
+  </td>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test-assertion in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{ppfa-test-assertion.subject}}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-assertion.verb}}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-assertion.object}}
+  </td>
+  
+  
+  <td>
+        {{boolean-success ppfa-test-assertion.status}}
+  </td>
+  
+  
+  <td>
+        {{ format-date ppfa-test-assertion.ppfa_test_run.date_created "LL" }}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-assertion.ppfa_test.name}}
+  </td>
+  
+  
+  <td>
+  {{#link-to "ppfa-test-assertion" ppfa-test-assertion}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-test-assertions' page=page num_pages=num_pages}}

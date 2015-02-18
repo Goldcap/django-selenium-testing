@@ -1,0 +1,4 @@
+http://lkhill.com/squid-with-dynamic-ssl-cert/
+http://blog.foppiano.org/2007/12/11/installing-source-package-with-yum/
+https://fedoraproject.org/wiki/How_to_create_an_RPM_package
+http://pubs.vmware.com/view-51/index.jsp?topic=%2Fcom.vmware.view.certificates.doc%2FGUID-17AD1631-E6D6-4853-8D9B-8E481BE2CC68.html

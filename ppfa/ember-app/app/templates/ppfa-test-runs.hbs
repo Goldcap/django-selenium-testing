@@ -1,0 +1,53 @@
+<table class="main">
+<thead>
+ <tr><td>
+        Test
+  </td><td>
+        Date Created
+  </td><td>
+        Status
+  </td>
+  <td>
+  Assertions
+  </td>   
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test-run in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{ppfa-test-run.ppfa_test.name}}
+  </td>
+  
+  
+  <td>
+        {{format-date ppfa-test-run.date_created "LLLL"}}
+  </td>
+  
+  
+  <td>
+        {{boolean-success ppfa-test-run.status}}
+  </td>
+  
+  
+  
+  <td>
+      {{#link-to "ppfa-test-assertions.index" }}
+      <button class="tiny"><i class="fa fa-pencil-square-o"></i> </button>
+      {{/link-to}}
+  </td>
+  
+  <td>
+  {{#link-to "ppfa-test-run" ppfa-test-run}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-test-runs' page=page num_pages=num_pages}}

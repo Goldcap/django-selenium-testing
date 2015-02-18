@@ -1,0 +1,32 @@
+<table>
+<thead>
+ <tr>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each group in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{group.id}}
+  </td>
+  
+  
+  <td>
+        {{group.name}}
+  </td>
+  
+  
+  <td>
+  {{#link-to "group" group}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='groups' page=page num_pages=num_pages}}

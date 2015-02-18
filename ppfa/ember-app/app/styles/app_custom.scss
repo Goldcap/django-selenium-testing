@@ -1,0 +1,25 @@
+@import 'foundation';
+$fa-font-path: "/assets/fonts" !default;
+@import "font-awesome";
+@import "pikaday.css";
+
+body {
+ margin-top: 30px;
+}
+
+.top-bar {
+    margin-bottom: 30px;
+}
+
+.content {
+    min-height: 500px;
+}
+
+table.main {
+    width: 100%;
+}
+
+.footer {
+}
+
+@import 'tests';

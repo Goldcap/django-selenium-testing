@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block javascripts_head %}
+    {{ block.super }}
+    <script src="/static/js/common.js"></script>
+{% endblock %}
+
+{% block center_column %}
+
+  <!-- Main Page Content and Sidebar -->
+
+    <div class="row">
+
+        <div class="large-offset-3 large-6 columns settop" role="main">
+    
+            <h4>User Login</h4>
+    		
+            <form id="main_form" action="/login/" method="POST">{% csrf_token %}
+     	       <span id="validation_msg_email" style="color:Red;display:none;">Please enter valid email address</span>
+                <input type="text" name="Email" id="id_Email" placeholder="Email" value="{{ form_values.Email }}">
+                <input type="password" name="Password" id="id_Password" placeholder="Password" value="{{ form_values.Password }}">
+                <span id="validation_last" style="color:Red;display:inline;">
+               {% if form.errors %}
+                    {{form.errors}}
+                {% endif %}
+                </span>
+                <input type="button" value="submit" class="button radius right" onclick="javascript:onclick_submit();"/>
+                
+            </form>
+            
+        </div>
+        
+    </div>
+    
+    <div class="row">
+
+        <div class="large-6 large-offset-3 columns">
+
+        	<h5>First Time?</h5>
+            <input type="button" value="Create An Account" class="button radius" onclick="javascript:onvendor_signup();" />
+        
+        </div>
+            
+  </div>
+  
+   <div class="row">
+
+        <div class="large-6 large-offset-3 columns">
+
+        	<h5>Having Trouble?</h5>
+            <a class="button radius" href="/forgot-password/">Forgot password?</a>
+           
+        </div>
+            
+  </div>
+
+  <!-- End Main Content and Sidebar -->
+  <script type="text/javascript">
+    
+    function onvendor_signup()
+    {
+        location.href = "/signup{% if next %}?next={{ next }}{% endif %}";
+    }
+    function onclick_submit()
+    {
+        var is_valid = true;
+
+        var sEmail = $('#id_Email').val();
+        if ($.trim(sEmail).length == 0 || validateEmail(sEmail) == false) {
+            $("#validation_msg_email").css("display", "inline");
+            is_valid = false;
+        }
+        else {
+            $("#validation_msg_email").css("display", "none");
+        }
+
+        if(is_valid){
+            $("#main_form").submit();
+        }
+    }
+  </script>
+{% endblock %}

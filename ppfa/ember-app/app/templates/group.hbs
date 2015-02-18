@@ -1,0 +1,6 @@
+{{#form-for model}}
+  {{input id placeholder="Enter your id"}}
+  {{input name placeholder="Enter your name"}}
+  <button {{action "submit" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  <button {{action "delete" model}} class="small"><i class="fa fa-trash-o"></i> Delete</button>
+{{/form-for}}

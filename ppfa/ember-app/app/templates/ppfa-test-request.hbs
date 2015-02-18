@@ -1,0 +1,5 @@
+{{#form-for model}}
+  {{input request_date placeholder="Enter your request_date"}}
+  <button {{action "submit" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  <button {{action "delete" model}} class="small"><i class="fa fa-trash-o"></i> Delete</button>
+{{/form-for}}

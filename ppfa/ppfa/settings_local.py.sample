@@ -1,0 +1,60 @@
+from os.path import dirname, join, abspath
+from django.conf import settings
+
+# Django settings for operis project.
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'ppfa_selenium_tests',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '####',
+        'PASSWORD': '####',
+        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
+}
+
+NODE_ROOT = join(settings.PROJECT_DIR, '..', 'node_modules')
+HANDLEBARS_PATH = join(NODE_ROOT, 'django-ember-precompile', 'bin', 'django-ember-precompile')
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-handlebars', '{} {{infile}}'.format(HANDLEBARS_PATH)),
+)
+
+REST_FRAMEWORK = {
+    #'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+	'INITCAP_FIELDS':False,
+    'DEFAULT_PAGINATION_SERIALIZER_CLASS':'api.serializers.CustomPaginationSerializer',
+    'FILTER_BACKEND': 'api.filters.DjangoFilterBackend',
+    'PAGINATE_BY': 3,
+    'PAGINATE_BY_PARAM': 'page_size'
+}
+
+EMBER_MODELS = ["selenium_tests.models"]
+EMBER_APP_NAME = "ember-app"
+EMBER_ENV = '{"environment":"development","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true}}'
+
+
+WSGI_APPLICATION = 'ws4redis.django_runserver.application'
+WEBSOCKET_URL = '/ws/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.static',
+    'ws4redis.context_processors.default',
+)
+
+MANDRILL_USERNAME = "####"
+MANDRILL_HOST = "####"
+MANDRILL_API_KEY = "####"
+
+EMAIL_BACKEND = 'django_mandrill.mail.backends.mandrillbackend.EmailBackend'
+ADMINISTRATOR_EMAIL = ['####']
+ACCOUNTING_EMAIL = '####'
+
+DEFAULT_FROM_EMAIL = '####'
+DEFAULT_FROM_NAME = '####'
+
+PROXY_HOST = '127.0.0.1'
+PROXY_PORT = 3128

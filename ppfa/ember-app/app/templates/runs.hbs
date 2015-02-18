@@ -1,0 +1,47 @@
+<div class="row">
+    <div id="test-runs" class="small-6 columns">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+            <li class="name">
+              <h1>{{#link-to 'runs'}}Runs of "{{controllers.test.name}}" {{/link-to}}</h1>
+            </li>
+          </ul>
+        </nav>
+        <ul class="small-block-grid-1">
+            {{#each ppfa_test_run in paginatedContent}}
+            <li>
+                <div class="panel test test-run">
+                      <ul class="no-bullet">
+                        <li class="info">
+                          Run: #{{ppfa_test_run.id}}
+                        </li>
+                        <li class="info">
+                          Date: {{format-date ppfa_test_run.date_created "LLLL"}}
+                        </li>
+                        <li class="info">
+                          Status: {{boolean-success ppfa_test_run.status}}
+                           {{ppfa_test_run.running}}
+                        </li>
+                        <li class="info">
+                            {{#link-to 'assertions' ppfa_test_run}}Assertions{{/link-to}}
+                        </li>
+                        <li class="info">
+                            <ul class="right bare inline-list">
+                                <li class="delete">
+                                    <a {{ action "delete" ppfa_test_run }}><i class="fa fa-trash-o"></i> Delete</a>
+                                </li>
+                            </ul>
+                        </li>
+                      </ul>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        
+        {{pagination-links item=this qs='page_runs' page=page num_pages=num_pages}}
+        
+    </div>                       
+    <div class="small-6 columns">
+        {{ outlet }}
+    </div> 
+</div> 

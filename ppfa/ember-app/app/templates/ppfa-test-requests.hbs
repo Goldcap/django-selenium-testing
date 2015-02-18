@@ -1,0 +1,36 @@
+<table>
+<thead>
+ <tr><td>
+        Date
+  </td><td>
+        Test
+  </td>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test-request in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{ppfa-test-request.ppfa_test}}
+  </td>
+  
+  
+  <td>
+        {{ppfa-test-request.request_date}}
+  </td>
+  
+  
+  <td>
+  {{#link-to "ppfa-test-request" ppfa-test-request}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-test-requests' page=page num_pages=num_pages}}

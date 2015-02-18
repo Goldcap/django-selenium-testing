@@ -1,0 +1,35 @@
+<table>
+<thead>
+ <tr><td>
+        Test
+  </td><td>
+        Date Created
+  </td><td>
+        Status
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test-run in model.ppfa_test_runs}}
+ <tr>
+  <td>
+        {{ppfa-test-run.ppfa_test.name}}
+  </td>
+  
+  
+  <td>
+        {{format-date ppfa-test-run.date_created "LLLL"}}
+  </td>
+  
+  
+  <td>
+        {{boolean-success ppfa-test-run.status}}
+  </td>
+  
+  
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-test-runs' page=page num_pages=num_pages}}

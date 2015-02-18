@@ -1,0 +1,7 @@
+{{#form-for model}}
+  {{input date_created placeholder="Enter your date_created"}}
+  {{input status placeholder="Enter your status"}}
+  {{input ppfa-test-assertion placeholder="Enter your ppfatestassertion"}}
+  <button {{action "submit" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  <button {{action "delete" model}} class="small"><i class="fa fa-trash-o"></i> Delete</button>
+{{/form-for}}

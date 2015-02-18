@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    {% endblock %}
+    
+    {% block title %}
+    <title>PPFA Test Runner</title>
+    {% endblock %}
+    
+    <base href="/" />
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    {% block stylesheets_head %}
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/ember-app.css">
+    <link rel="stylesheet" href="assets/app.css">
+    {% endblock %}
+    
+    {% block javascripts_head %}
+        <script src="assets/vendor.js"></script>
+    {% endblock %}
+
+</head>
+<body>
+
+    
+    {% block content %}
+     <div class="large-12 columns">
+	
+        <article class="content">
+        
+        {% block header %}
+            <div class="off-canvas-wrap fixed" data-offcanvas>
+              <div class="inner-wrap">
+                <nav class="tab-bar">
+                  
+                  <section class="middle tab-bar-section">
+                    <h1 class="title">Planned Parenthood Test Runner</h1>
+                  </section>
+            
+                </nav>
+            
+            
+                <section class="main-section">
+                  
+                  <nav class="primary top-bar fixed" data-topbar>
+                      <ul class="title-area">
+                         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                      </ul>
+                    
+                    </nav>
+                    
+        {% endblock %}
+                
+        {% block left_column %}{% endblock %}
+        
+        {% block center_column %}{% endblock %}
+     
+        {% block right_column %}{% endblock %}
+       
+        </article>
+        
+   </div>
+   
+    {% block footer %}
+    
+    </section>
+
+    <a class="exit-off-canvas"></a>
+
+    {% endblock %} 
+        
+  </div>
+  
+</div>
+    
+    {% block partials %}{% endblock %} 
+    
+    {% endblock %}
+   
+  
+  {% block javascripts_foot %}{% endblock %}
+</body>
+</html>

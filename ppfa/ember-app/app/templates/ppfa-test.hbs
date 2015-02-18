@@ -1,0 +1,11 @@
+{{#form-for model}}
+  {{input name placeholder="Enter your name"}}
+  {{input location placeholder="Enter your location"}}
+  {{input date_created placeholder="Enter your date_created"}}
+  {{input last_run placeholder="Enter your last_run"}}
+  {{input status placeholder="Enter your status"}}
+  {{input ppfa-test-run placeholder="Enter your ppfatestrun"}}
+  {{input ppfa-test-assertion placeholder="Enter your ppfatestassertion"}}
+  <button {{action "submit" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  <button {{action "delete" model}} class="small"><i class="fa fa-trash-o"></i> Delete</button>
+{{/form-for}}

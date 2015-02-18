@@ -1,0 +1,75 @@
+<table class="main">
+<thead>
+ <tr><td>
+        Name
+  </td><td>
+        Location
+  </td><td>
+        Date Created
+  </td><td>
+        Last Run
+  </td><td>
+        Status
+  </td><td>
+        Test Runs
+  </td><td>
+        Test Assertions
+  </td>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each ppfa-test in controller.paginatedContent}}
+ <tr>
+  <td>
+        <a {{action 'show_runs' ppfa-test }}>{{ppfa-test.name}}</a>
+  </td>
+  
+  
+  <td>
+        {{ppfa-test.location}}
+  </td>
+  
+  
+  <td>
+        {{format-date ppfa-test.date_created "LL"}}
+  </td>
+  
+  
+  <td>
+        {{format-date ppfa-test.last_run "LL"}}
+  </td>
+  
+  
+  <td>
+        {{boolean-success ppfa-test.status}}
+  </td>
+  
+  
+  <td>
+      {{#link-to "ppfa-tests.ppfa-test-ppfa-test-runs" ppfa-test }}
+      <button class="tiny"><i class="fa fa-pencil-square-o"></i> </button>
+      {{/link-to}}
+  </td>
+  
+  
+  <td>
+      {{#link-to "ppfa-test-assertions.index" }}
+      <button class="tiny"><i class="fa fa-pencil-square-o"></i> </button>
+      {{/link-to}}
+  </td>
+  
+  <td>
+  {{#link-to "ppfa-test" ppfa-test}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr> 
+
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='ppfa-tests' page=page num_pages=num_pages}}

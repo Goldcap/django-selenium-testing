@@ -1,0 +1,9 @@
+{{#form-for model}}
+  {{input name placeholder="Enter the test name"}}
+  {{input location placeholder="Enter the location of the test module"}}
+  {{#if isNew}}
+  <button  {{action "create" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  {{else}}
+  <button  {{action "edit" model}} class="small"><i class="fa fa-save"></i> Save</button>
+  {{/if}}
+{{/form-for}}

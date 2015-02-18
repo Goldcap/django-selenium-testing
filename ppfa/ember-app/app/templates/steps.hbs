@@ -1,0 +1,59 @@
+<div class="row">
+    <div id="test-steps" class="small-6 columns">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name">
+                    <h1>{{#link-to 'steps'}}Steps{{/link-to}}</h1>
+                </li>
+            </ul>
+            
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                    <li class="info">
+                    {{#link-to 'steps.add'}}<i class="fa fa-plus"></i> Add A Step{{/link-to}}
+                    </li>
+                </ul>
+            </section>
+            
+        </nav>
+        <ul class="small-block-grid-1">
+            {{#each ppfa_test_step in paginatedContent}}
+            <li>
+                <div class="panel test">
+                      <ul class="no-bullet">
+                        <li class="info">
+                          #{{ppfa_test_step.id}} "{{ppfa_test_step.subject}}" {{ppfa_test_step.verb}} "{{ppfa_test_step.object}}"
+                        </li>
+                        <li class="info">
+                          Subject: {{ppfa_test_step.subject}}
+                        </li>
+                        <li class="info">
+                          Verb: {{ppfa_test_step.verb}}
+                        </li>
+                        <li class="info">
+                          Object: {{ppfa_test_step.object}}
+                        </li>
+                        <li class="info">
+                            <ul class="right bare inline-list">
+                                <li class="edit">
+                                    {{#link-to 'steps.edit' ppfa_test_step}}<i class="fa fa-pencil-square-o"></i> Edit{{/link-to}}
+                                </li>
+                                <li class="delete">
+                                        <a {{ action "delete" ppfa_test_step }}><i class="fa fa-trash-o"></i> Delete</a>
+                                </li>
+                            </ul>
+                        </li>
+                      </ul>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        
+        {{pagination-links item=this qs='page_steps' page=page num_pages=num_pages}}
+        
+    </div>                       
+    <div class="small-6 columns">
+        {{ outlet }}
+    </div> 
+</div> 

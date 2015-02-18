@@ -1,0 +1,27 @@
+<div class="row">
+    <div id="test-run-assertions" class="small-12 columns">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+            <li class="name">
+              <h1>{{#link-to 'assertions'}}Assertions{{/link-to}}</h1>
+            </li>
+          </ul>
+        </nav>
+        <ul class="small-block-grid-1">
+            {{#each ppfa_test_assertion in sortedContent}}
+            <li>
+                <div class="panel test">
+                      <ul class="no-bullet">
+                        <li class="info">
+                          {{ppfa_test_assertion.subject}} {{ppfa_test_assertion.verb}} "{{ppfa_test_assertion.object}}"
+                        </li> 
+                        <li class="info">
+                            {{boolean-success ppfa_test_assertion.status}}
+                        </li>
+                      </ul>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>  
+</div> 

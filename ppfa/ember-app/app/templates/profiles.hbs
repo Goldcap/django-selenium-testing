@@ -1,0 +1,52 @@
+<table>
+<thead>
+ <tr>
+  <td>
+  &nbsp;
+  </td>
+</tr>
+</thead>
+<tbody>
+{{#each profile in controller.paginatedContent}}
+ <tr>
+  <td>
+        {{profile.id}}
+  </td>
+  
+  
+  <td>
+        {{profile.user}}
+  </td>
+  
+  
+  <td>
+        {{profile.first-name}}
+  </td>
+  
+  
+  <td>
+        {{profile.last-name}}
+  </td>
+  
+  
+  <td>
+        {{profile.date-submitted}}
+  </td>
+  
+  
+  <td>
+        {{profile.approved}}
+  </td>
+  
+  
+  <td>
+  {{#link-to "profile" profile}}
+  <button class="tiny"><i class="fa fa-pencil-square-o"></i> Edit</button>
+  {{/link-to}}
+  </td> 
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+{{pagination-links model='profiles' page=page num_pages=num_pages}}
